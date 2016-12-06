@@ -15,3 +15,10 @@ end
 get('/doctor_form') do
   erb(:doctor_form)
 end
+
+post('/doctor_form') do
+  name = params.fetch("name_input")
+  specialty = params.fetch("specialty_input")
+  Doctor.new({:id => nil, :name => name, :specialty => specialty}).save
+  erb(:doctor_success)
+end
