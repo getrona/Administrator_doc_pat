@@ -30,10 +30,18 @@ describe(Patient) do
     end
   end
 
-  describe('==') do
+  describe('#==') do
     it('tests for equivalence without instance id') do
       @test_patient2 = Patient.new({:name => "Paul", :birthday => '1987-02-26 00:00:00', :doctor_id => 1})
       expect(@test_patient).to(eq(@test_patient2))
     end
   end
+
+  describe('#save') do
+    it('tests for save function') do
+      @test_patient.save
+      expect(Patient.all).to(eq([@test_patient]))
+    end
+  end
+
 end

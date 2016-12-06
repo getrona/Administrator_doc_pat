@@ -27,4 +27,5 @@ class Doctor
     result = DB.exec("INSERT INTO doctors (name, specialty) VALUES ('#{@name}', '#{@specialty}') RETURNING id;")
     @id = result.first().fetch("id").to_i
   end
+
 end
