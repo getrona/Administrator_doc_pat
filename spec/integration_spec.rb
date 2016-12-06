@@ -19,4 +19,12 @@ describe('test navigation', {:type => :feature}) do
     click_button("Add Doctor")
     expect(page).to have_content("You successfully added a doctor to your list!")
   end
+
+  it('displays all doctors') do
+    doctor = Doctor.new({:id => nil, :name => "Dr Jet", :specialty => "orthopedic"})
+    doctor.save()
+    visit('/')
+    click_link('View all doctors')
+    expect(page).to have_content(doctor.name)
+  end
 end

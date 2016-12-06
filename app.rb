@@ -22,3 +22,12 @@ post('/doctor_form') do
   Doctor.new({:id => nil, :name => name, :specialty => specialty}).save
   erb(:doctor_success)
 end
+
+get('/doctor_list') do
+  @doctors = Doctor.all
+  erb(:doctor_list)
+end
+
+post('') do
+
+end
