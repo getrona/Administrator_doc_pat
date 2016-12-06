@@ -19,4 +19,8 @@ attr_reader(:name, :birthday, :doctor_id)
     end
     patients
   end
+
+  define_method(:==) do |another_patient|
+    self.name == another_patient.name && self.birthday == another_patient.birthday && self.doctor_id == another_patient.doctor_id
+  end
 end
