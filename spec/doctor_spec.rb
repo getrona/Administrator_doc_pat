@@ -28,10 +28,10 @@ describe(Doctor) do
     end
   end
 
-  # describe('#save') do
-  #   it('will save the doctor record in the table') do
-  #     @test_doctor.save()
-  #     expect(Doctor.all()).to(eq([@test_doctor]))
-  #   end
-  # end
+  describe('#save') do
+    it('will save the doctor record in the table') do
+      @test_doctor.save()
+      expect(Doctor.all()).to(eq([@test_doctor]))
+    end
+  end
 end

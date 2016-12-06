@@ -22,4 +22,9 @@ class Doctor
   define_method(:==) do |other_doctor|
     self.name == (other_doctor.name) && self.specialty == (other_doctor.specialty) && self.id == (other_doctor.id)
   end
+
+  define_method(:save) do
+    result = DB.exec("INSERT INTO doctors (name, specialty) VALUES ('#{@name}', '#{@specialty}') RETURNING id;")
+    @id = result.first().fetch("id").to_i
+  end
 end
