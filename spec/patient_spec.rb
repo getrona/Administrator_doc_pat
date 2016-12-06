@@ -23,4 +23,11 @@ describe(Patient) do
       expect(@test_patient.doctor_id).to(eq(1))
     end
   end
+
+  describe('.all') do
+    it('return the elements from the table') do
+      expect(Patient.all()).to(eq([]))
+    end
+  end
+  
 end
