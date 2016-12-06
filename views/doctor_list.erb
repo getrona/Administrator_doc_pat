@@ -1,0 +1,7 @@
+<ul>
+<% @doctors.each do |doctor| %>
+  <li><a href="/doctor/<%= doctor.id%>"><%= doctor.name %></a></li>
+<% end %>
+</ul>
+
+<a href="/doctor_form">Create a new doctor profile</a>

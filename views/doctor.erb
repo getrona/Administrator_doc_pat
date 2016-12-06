@@ -1,0 +1,10 @@
+<h1> Patients assigned to <%= @doctor.name %></h1>
+
+<ul>
+<% @patients.each do |patient| %>
+  <li><%= patient.name %>: <%= patient.birthday %></li>
+<% end %>
+</ul>
+
+<a href="/doctor/<%= @doctor.id %>/patients/new">Create new patient profile</a>
+<a href="/doctor/<%= @doctor.id %>">Return to doctor page</a>
