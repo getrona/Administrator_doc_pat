@@ -18,4 +18,8 @@ class Doctor
     end
     doctors
   end
+
+  define_method(:==) do |other_doctor|
+    self.name == (other_doctor.name) && self.specialty == (other_doctor.specialty) && self.id == (other_doctor.id)
+  end
 end
