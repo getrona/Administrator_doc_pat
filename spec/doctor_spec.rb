@@ -7,4 +7,10 @@ describe(Doctor) do
       expect(test_doctor.name()).to(eq("Hebert"))
     end
   end
+  describe('#specialty') do
+    it('returns the specialty of the physician') do
+      test_specialty = Doctor.new({:name => "Michael", :specialty => "pediatric"})
+      expect(test_specialty.specialty).to(eq("pediatric"))
+    end
+  end
 end
